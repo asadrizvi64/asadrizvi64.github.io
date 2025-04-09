@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Muhammad Asad | AI & Deep Learning Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --info: #06b6d4;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark-accent: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header and Nav */
+        header {
+            position: relative;
+            background: var(--dark);
+            color: white;
+            overflow: hidden;
+        }
+
+        .particles-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            z-index: 1;
+            background-image:
+                radial-gradient(var(--primary) 1px, transparent 1px),
+                radial-gradient(var(--secondary) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-accent {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover:after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            padding: 5rem 0;
+            min-height: 90vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-img-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .hero-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+            animation: morphing 15s ease-in-out infinite;
+            background-color: var(--primary);
+            z-index: 2;
+        }
+
+        @keyframes morphing {
+            0% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+
+            25% {
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+            }
+
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+            }
+
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+            }
+
+            100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+        }
+
+        .hero-bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            opacity: 0.3;
+            top: 20%;
+            right: 10%;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            background: var(--secondary);
+            opacity: 0.2;
+            bottom: 20%;
+            left: 10%;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero h1 .highlight {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            bottom: 5px;
+            left: 0;
+            background-color: rgba(236, 72, 153, 0.3);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray);
+            max-width: 600px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d946ef;
+            box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
+        }
+
+        .social-proof {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-light {
+            background-color: var(--light);
+        }
+
+        .section-dark {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .section-gray {
+            background-color: #f1f5f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .section-dark .section-title h2:after {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .section-dark .section-title p {
+            color: var(--gray);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Cards */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .card-date {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .badge-primary {
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+        }
+
+        .badge-secondary {
+            background-color: rgba(236, 72, 153, 0.1);
+            color: var(--secondary);
+        }
+
+        .badge-success {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .badge-info {
+            background-color: rgba(6, 182, 212, 0.1);
+            color: var(--info);
+        }
+
+        .badge-warning {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+
+        .badge-danger {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+        }
+
+        .card-link {
+            margin-top: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .card-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Project Cards */
+        .project-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            background: linear-gradient(to top, var(--dark), transparent);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-badge {
+            padding: 0.3rem 0.6rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        /* Skill Section */
+        .skill-category {
+            margin-bottom: 3rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-category h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .skill-icon.ml {
+            background-color: var(--primary);
+        }
+
+        .skill-icon.dl {
+            background-color: var(--secondary);
+        }
+
+        .skill-icon.web {
+            background-color: var(--success);
+        }
+
+        .skill-icon.tools {
+            background-color: var(--info);
+        }
+
+        .skill-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .skill-info p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            left: 50%;
+            margin-left: -1.5px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-left,
+        .timeline-right {
+            position: relative;
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .timeline-left {
+            left: 0;
+        }
+
+        .timeline-right {
+            left: 50%;
+        }
+
+        .timeline-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 10;
+        }
+
+        .timeline-left .timeline-point {
+            right: -10px;
+        }
+
+        .timeline-right .timeline-point {
+            left: -10px;
+        }
+
+        .timeline-content {
+            position: relative;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-date {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .timeline-subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--gray);
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-about p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            color: var(--gray);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding-top: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 0;
+            }
+
+            .hero-content {
+                order: 2;
+                margin-top: 2rem;
+            }
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .social-proof {
+                justify-content: center;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline:before {
+                left: 30px;
+            }
+
+            .timeline-left,
+            .timeline-right {
+                width: 100%;
+                left: 0;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-left .timeline-point,
+            .timeline-right .timeline-point {
+                left: 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Styles for mobile nav */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--dark);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <button class="close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="particles-bg"></div>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Syed<span class="logo-accent">Asad</span> <i class="fas fa-braille"></i></a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>AI Engineer & <span class="highlight">Deep Learning</span> Specialist</h1>
+                    <p>Building next-generation solutions with Generative AI, Computer Vision, and Large Language Models
+                        to solve real-world challenges.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-project-diagram"></i> View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> Contact Me
+                        </a>
+                    </div>
+                    <div class="social-proof">
+                        <div class="social-links">
+                            <a href="https://github.com/asadrizvi64" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/asadrizvi64/" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/asadrizvi64" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://asadrizvi64.medium.com/" target="_blank"><i
+                                    class="fab fa-medium-m"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-img-container">
+                        <img src="https://ui-avatars.com/api/?name=Syed+Muhammad+Asad&size=200&background=6366F1&color=fff"
+                            alt="Syed Muhammad Asad" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section section-light">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>About Me</h2>
+                <p>Pushing the boundaries of AI innovation to create impactful solutions</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card fade-in">
+                    <div class="card-accent"></div>
+                    <h3>My Journey</h3>
+                    <p>As an AI Engineer with 2+ years of experience, I specialize in machine learning, computer vision,
+                        and diffusion models. I've led teams and developed optimized AI systems, reducing load times by
+                        97% at Imarat.</p>
+                    <p>My expertise lies in fine-tuning models like ControlNet, Runway, and Flux to solve real-world
+                        problems in architecture, design, and automation. With a strong foundation in Python, PyTorch,
+                        and ML deployment, I'm passionate about creating innovative AI solutions that make a tangible
+                        impact.</p>
+                    <p>My technical journey began at the National University of Computing and Emerging Sciences, where I
+                        graduated with a BS in Artificial Intelligence in 2023, developing KisaanDost - an Urdu voice
+                        chatbot for farmers using Bloomz 1.7B.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-accent"></div>
+                    <h3>Core Strengths</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-icon dl">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>Generative AI</h4>
+                                <p>Fine-tuning diffusion models</p>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon ml">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>LLM Engineering</h4>
+                                <p>RAG systems & model optimization</p>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon web">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>Computer Vision</h4>
+                                <p>Image processing & model design</p>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon tools">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>MLOps</h4>
+                                <p>Deployment & system optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge-container">
+                        <span class="badge badge-primary">Python</span>
+                        <span class="badge badge-secondary">PyTorch</span>
+                        <span class="badge badge-success">TensorFlow</span>
+                        <span class="badge badge-info">React</span>
+                        <span class="badge badge-warning">Django</span>
+                        <span class="badge badge-danger">Flask</span>
+                        <span class="badge badge-primary">Hugging Face</span>
+                        <span class="badge badge-secondary">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-gray">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Featured Projects</h2>
+                <p>A showcase of my work in AI, deep learning, and computer vision</p>
+            </div>
+
+            <!-- Featured Projects -->
+            <div class="grid grid-2 fade-in">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="KisaanDost AI" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-title">KisaanDost AI</h3>
+                        <p class="project-desc">Voice-to-voice chatbot using Bloomz 1.7B fine-tuned on agricultural data
+                            for local farmers in Urdu</p>
+                        <div class="project-badges">
+                            <span class="project-badge">Bloomz LLM</span>
+                            <span class="project-badge">ASR</span>
+                            <span class="project-badge">TTS</span>
+                            <span class="project-badge">Flask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Stable Diffusion Fine-Tuning" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Architectural Diffusion Models</h3>
+                        <p class="project-desc">Fine-tuned Stable Diffusion models for architectural design, reducing
+                            model loss by 82% in 400 epochs</p>
+                        <div class="project-badges">
+                            <span class="project-badge">Stable Diffusion</span>
+                            <span class="project-badge">ControlNet</span>
+                            <span class="project-badge">Fine-tuning</span>
+                            <span class="project-badge">PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid grid-3 fade-in" style="margin-top: 2rem;">
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>RAG Architecture Q/A System</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> 2024</p>
+                    <div class="card-content">
+                        <p>Created a pipeline using Llama3.1 API for generating synthetic datasets from architectural
+                            books. Fine-tuned Gemma-2B with domain-specific Q/A pairs for enhanced performance in
+                            architecture domains.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">RAG</span>
+                            <span class="badge badge-secondary">Llama3.1</span>
+                            <span class="badge badge-success">Gemma-2B</span>
+                            <span class="badge badge-info">Fine-tuning</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/asadrizvi64/ArchGemma.git" target="_blank" class="card-link">View
+                        Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>Mockberg Virtual Try-On</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> 2024</p>
+                    <div class="card-content">
+                        <p>Comprehensive virtual try-on system for jewelry products using advanced techniques like
+                            product replacement, style reference, pose estimation, and background manipulation for
+                            realistic visualization.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">Computer Vision</span>
+                            <span class="badge badge-secondary">Pose Estimation</span>
+                            <span class="badge badge-success">Product Placement</span>
+                            <span class="badge badge-warning">Style Transfer</span>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>360° Panorama Engine (Dobbli3d)</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> 2024</p>
+                    <div class="card-content">
+                        <p>Novel solution for creating high-quality 360-degree panoramas from sparse images with minimal
+                            overlap using advanced feature detection (SuperPoint and SIFT) and custom stitching
+                            algorithms.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">Computer Vision</span>
+                            <span class="badge badge-secondary">Image Stitching</span>
+                            <span class="badge badge-success">Feature Detection</span>
+                            <span class="badge badge-info">GPU Acceleration</span>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>StyleGAN Virtual Fitting Room</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> 2024</p>
+                    <div class="card-content">
+                        <p>Cloth parsing system using pre-trained U2NET model for human portrait segmentation, parsing
+                            clothing into distinct categories and leveraging StyleGAN for realistic image generation and
+                            virtual try-on applications.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">U2NET</span>
+                            <span class="badge badge-secondary">StyleGAN</span>
+                            <span class="badge badge-success">Segmentation</span>
+                            <span class="badge badge-info">Virtual Try-On</span>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>Rasa Chatbot with Django</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> December 2023</p>
+                    <div class="card-content">
+                        <p>Sophisticated Rasa chatbot for an insurance company with Django integration. Implemented
+                            custom stories and intents with seamless CRM integration for personalized customer
+                            interactions.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">Rasa</span>
+                            <span class="badge badge-secondary">Django</span>
+                            <span class="badge badge-success">NLU</span>
+                            <span class="badge badge-info">CRM Integration</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/asadrizvi64/Rasa_chatbot.git" target="_blank" class="card-link">View
+                        Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>DeepFake Face Generator</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> January 2023</p>
+                    <div class="card-content">
+                        <p>Implemented a deepfake-based AI system for generating photorealistic face portraits, inspired
+                            by state-of-the-art deepfake research. Used deep learning algorithms for facial landmark
+                            detection and realistic rendering.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">DCGAN</span>
+                            <span class="badge badge-secondary">Facial Recognition</span>
+                            <span class="badge badge-success">PyTorch</span>
+                            <span class="badge badge-info">Computer Vision</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/asadrizvi64/DCGAN-face" target="_blank" class="card-link">View Project
+                        <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>Auto-Colorization with Pix2Pix</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> May 2023</p>
+                    <div class="card-content">
+                        <p>Developed novel color correction system with Pix2Pix GAN, outperforming pre-trained models
+                            like ResNet34 with the lowest MAE and highest PSNR scores. Trained on the BSDS500 dataset
+                            for optimal accuracy.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">Pix2Pix</span>
+                            <span class="badge badge-secondary">GANs</span>
+                            <span class="badge badge-success">Image Processing</span>
+                            <span class="badge badge-info">PyTorch</span>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>3D Scene from Urdu Speech</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> May 2022</p>
+                    <div class="card-content">
+                        <p>Python-based system converting Urdu speech to 3D scenes using Google's Speech Recognition
+                            API. Features include Urdu to Roman script conversion, text preprocessing, and 3D scene
+                            generation with Panda3D.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">Speech Recognition</span>
+                            <span class="badge badge-secondary">NLP</span>
+                            <span class="badge badge-success">3D Rendering</span>
+                            <span class="badge badge-info">Panda3D</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/asadrizvi64/3D-Scene-Generation-from-Urdu-Speech" target="_blank"
+                        class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>Urdu Poetry Generator</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> May 2022</p>
+                    <div class="card-content">
+                        <p>Poetry generator using language models that explores three techniques for generating poetic
+                            verses: Bigrams, Trigrams, and Bidirectional Models. Creates captivating Roman-Urdu verses
+                            that mimic human creativity.</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">NLP</span>
+                            <span class="badge badge-secondary">Language Modeling</span>
+                            <span class="badge badge-success">N-grams</span>
+                            <span class="badge badge-info">Urdu NLP</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/asadrizvi64/-Generating-Roman-Urdu-Poetry-with-Language-Modelling"
+                        target="_blank" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-light">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Technical Expertise</h2>
+                <p>Specialized skills in AI, ML, and software development</p>
+            </div>
+
+            <div class="grid grid-2 fade-in">
+                <div>
+                    <div class="skill-category">
+                        <h3>Deep Learning & AI</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon dl">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>PyTorch</h4>
+                                    <p>Advanced model building & training</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon dl">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>TensorFlow/Keras</h4>
+                                    <p>Production model development</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon dl">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Stable Diffusion</h4>
+                                    <p>Model fine-tuning & optimization</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon dl">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>LLM Fine-tuning</h4>
+                                    <p>Gemma, Llama, BLOOM models</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon dl">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>RAG Systems</h4>
+                                    <p>Vector databases & embedding</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon dl">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Computer Vision</h4>
+                                    <p>Object detection & segmentation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Programming & Frameworks</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon web">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Python</h4>
+                                    <p>Advanced development</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon web">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>C/C++</h4>
+                                    <p>System programming</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon web">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>JavaScript/React</h4>
+                                    <p>Frontend development</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon web">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Django/Flask</h4>
+                                    <p>Web application backends</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="skill-category">
+                        <h3>Data Science & Analytics</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon ml">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>NumPy/Pandas</h4>
+                                    <p>Data manipulation & analysis</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon ml">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Scikit-learn</h4>
+                                    <p>ML model development</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon ml">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Matplotlib/Seaborn</h4>
+                                    <p>Data visualization</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon ml">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>SQL/NoSQL</h4>
+                                    <p>Database management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>DevOps & Tools</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon tools">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Docker/Kubernetes</h4>
+                                    <p>Containerization & orchestration</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon tools">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Git/GitHub</h4>
+                                    <p>Version control</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon tools">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Hugging Face</h4>
+                                    <p>Model hosting & deployment</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon tools">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>CI/CD</h4>
+                                    <p>Jenkins, GitHub Actions</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon tools">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>ComfyUI/Kohya</h4>
+                                    <p>Diffusion model workflows</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon tools">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Ollama</h4>
+                                    <p>Local LLM deployment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-gray">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Professional Experience</h2>
+                <p>My journey through AI and software development roles</p>
+            </div>
+
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">March 2024 - Present</span>
+                            <h3 class="timeline-title">AI Engineer</h3>
+                            <h4 class="timeline-subtitle">Imarat Group of Companies, Islamabad</h4>
+                            <ul>
+                                <li>Enhanced architecture planning tools, improving efficiency in floorplan and 3D
+                                    elevation design</li>
+                                <li>Leading research to improve AI models for city planning and customizable home design
+                                </li>
+                                <li>Designed generative models that transform raw data into architectural insights,
+                                    enhancing precision by 30%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-right">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">December 2023 - February 2024</span>
+                            <h3 class="timeline-title">Python Developer</h3>
+                            <h4 class="timeline-subtitle">Hypertext Solutions, Islamabad</h4>
+                            <ul>
+                                <li>Resolved legacy code challenges with Rasa, Django, and SQLite, ensuring reliability
+                                </li>
+                                <li>Conducted rigorous API endpoint testing and fine-tuned Rasa models, achieving 99.5%
+                                    uptime</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">May 2023 - November 2023</span>
+                            <h3 class="timeline-title">Junior Developer</h3>
+                            <h4 class="timeline-subtitle">CreativeLog, Islamabad (Remote)</h4>
+                            <ul>
+                                <li>Optimized recommendation system and developed a secure Chatbot using Supabase and
+                                    MySQL</li>
+                                <li>Delivered a modern UI with Next.js and Styled Components, increasing user engagement
+                                    by 40%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-right">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">July 2022 - August 2022</span>
+                            <h3 class="timeline-title">Data Engineer - Intern</h3>
+                            <h4 class="timeline-subtitle">IKNEX-Lab, Islamabad</h4>
+                            <ul>
+                                <li>Curated datasets, improving model accuracy by 15%</li>
+                                <li>Performed statistical analysis with Tizen, ensuring accuracy for decision support
+                                    systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">July 2021 - August 2021</span>
+                            <h3 class="timeline-title">ML Engineer - Intern</h3>
+                            <h4 class="timeline-subtitle">AIMs-Lab, Islamabad</h4>
+                            <ul>
+                                <li>Fine-tuned Urdu language models with curated datasets, enhancing language
+                                    understanding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Education & Certifications</h2>
+                <p>Continuous learning journey in artificial intelligence and deep learning</p>
+            </div>
+
+            <div class="grid grid-2 fade-in">
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>BS, Artificial Intelligence</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> August 2019 - May 2023</p>
+                    <h4>National University of Computing and Emerging
+                        <h4>National University of Computing and Emerging Sciences, Islamabad</h4>
+                        <p>Final Year Project: KisaanDost, a Voice2Voice Chatbot, using Bloomz 1.7B – finetuned on
+                            Agri-sources, for local farmers in Urdu</p>
+                        <p>Relevant Coursework: Artificial Neural Networks, Machine Learning, Game Theory, Knowledge
+                            Representation, Data Structures & Algorithms, Database Systems</p>
+                        <div class="badge-container">
+                            <span class="badge badge-primary">AI</span>
+                            <span class="badge badge-secondary">ML</span>
+                            <span class="badge badge-success">Deep Learning</span>
+                            <span class="badge badge-info">Computer Vision</span>
+                            <span class="badge badge-warning">NLP</span>
+                        </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>Certifications</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Oracle Cloud Infrastructure 2023 AI Foundations Associate</strong>
+                                    <p style="margin: 5px 0 0;">Oracle – January 2024</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Azure AI Fundamentals</strong>
+                                    <p style="margin: 5px 0 0;">Microsoft – December 2023</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Introduction to Computer Vision and Image Processing</strong>
+                                    <p style="margin: 5px 0 0;">IBM – December 2023</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Foundations: Data, Data, everywhere</strong>
+                                    <p style="margin: 5px 0 0;">Google – November 2023</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Intro Generative AI</strong>
+                                    <p style="margin: 5px 0 0;">LinkedIn – February 2024</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and
+                                        Optimization</strong>
+                                    <p style="margin: 5px 0 0;">Deeplearning.ai – June 2023</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Leadership & Activities</h2>
+                <p>Building communities and making an impact</p>
+            </div>
+
+            <div class="grid grid-2 fade-in">
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>President: Fullsend Athletics Society</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> August 2021 - June 2023</p>
+                    <p>Co-founded the first athletic society on NUCES campus. Organized multiple physical events,
+                        sessions, and challenging games. Developed a hierarchical structure and hosted the largest event
+                        on campus with 500+ participants.</p>
+                    <div class="badge-container">
+                        <span class="badge badge-primary">Leadership</span>
+                        <span class="badge badge-secondary">Event Management</span>
+                        <span class="badge badge-success">Team Building</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <h3>Vice President: Fast Sustainable Development Society</h3>
+                    <p class="card-date"><i class="far fa-calendar-alt"></i> August 2021 - June 2023</p>
+                    <p>Conducted climate change awareness campaigns, seminars, workshops, and fundraisers. Led
+                        initiatives to promote sustainability and environmental consciousness among students and
+                        faculty.</p>
+                    <div class="badge-container">
+                        <span class="badge badge-primary">Sustainability</span>
+                        <span class="badge badge-secondary">Public Speaking</span>
+                        <span class="badge badge-success">Project Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Research & Publications</h2>
+                <p>Contributing to the advancement of AI and computer vision</p>
+            </div>
+
+            <div class="card fade-in">
+                <div class="card-accent"></div>
+                <h3>From Interactive Floorplan Generation to Style Rendering Using Diffusion Models and ControlNet</h3>
+                <p class="card-date"><i class="far fa-calendar-alt"></i> In Progress</p>
+                <p>Researching a comprehensive AI framework for automating floor plan creation with real-time user
+                    interaction and style-based rendering, leveraging diffusion models to transform architectural
+                    workflows. This research aims to revolutionize how architects and designers interact with AI tools
+                    during the early stages of design.</p>
+                <div class="badge-container">
+                    <span class="badge badge-primary">Diffusion Models</span>
+                    <span class="badge badge-secondary">ControlNet</span>
+                    <span class="badge badge-success">Architecture AI</span>
+                    <span class="badge badge-info">Interactive Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+                <p>Let's discuss how we can work together</p>
+            </div>
+
+            <div class="contact-cards fade-in">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:asad.haider.rizvi64@gmail.com">asad.haider.rizvi64@gmail.com</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+923365770127">+92 336 577 0127</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Islamabad, Pakistan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <span class="footer-logo">Syed Muhammad Asad</span>
+                    <p>AI Engineer specializing in applying generative techniques to address practical challenges and
+                        leading effective teams.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/asadrizvi64" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/asadrizvi64/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/asadrizvi64" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://asadrizvi64.medium.com/" target="_blank"><i class="fab fa-medium-m"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-section">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-section">
+                    <h3 class="footer-heading">Projects</h3>
+                    <ul class="footer-links">
+                        <li><a href="#projects">KisaanDost AI</a></li>
+                        <li><a href="#projects">Stable Diffusion Fine-Tuning</a></li>
+                        <li><a href="#projects">RAG Architecture System</a></li>
+                        <li><a href="#projects">360° Panorama Engine</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:asad.haider.rizvi64@gmail.com">asad.haider.rizvi64@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+923365770127">+92 336 577 0127</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Islamabad, Pakistan</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Syed Muhammad Asad. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/asadrizvi64" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/asadrizvi64/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/asadrizvi64" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://asadrizvi64.medium.com/" target="_blank"><i class="fab fa-medium-m"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const closeBtn = document.querySelector('.close-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+
+        // Hero Image Animation
+        const heroImg = document.querySelector('.hero-img');
+
+        function moveBackground(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            heroImg.style.transform = `translate(-50%, -50%) translate(${x * 20}px, ${y * 20}px)`;
+        }
+
+        document.addEventListener('mousemove', moveBackground);
+    </script>
+</body>
+
+</html>
