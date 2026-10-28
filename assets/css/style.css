@@ -99,6 +99,7 @@ a:hover { color: var(--pink); }
 }
 
 .muted { color: var(--dim); }
+.nw { white-space: nowrap; }
 
 mark { background: none; color: inherit; padding: 0 2px; }
 .hl-green { color: var(--green); }
