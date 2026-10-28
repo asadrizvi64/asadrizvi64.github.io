@@ -63,17 +63,18 @@ window.PROJECTS = [
         title: 'SynthralOS',
         sub: 'A multi-tenant operating system for AI agents',
         kind: 'AGENTS · INFRA',
-        context: 'KhyaalTech · co-architected, owned end-to-end',
+        context: 'SynthralOS · Forward Deployed AI Engineer · 2025 – 26',
         piece: 'I',
         color: 'green',
         tags: ['llm'],
         summary: 'One production platform for a fragmented agent ecosystem: runtime, durable workflows, three-tier memory, retrieval and deployment. Co-architected and owned end-to-end, from schema to frontend.',
         meta: [
-            ['Context', 'KhyaalTech'],
-            ['Role', 'Co-architect · end-to-end owner'],
+            ['Company', 'SynthralOS'],
+            ['Role', 'Forward Deployed AI Engineer'],
+            ['Period', 'Nov 2025 – May 2026'],
             ['Deploy', 'Self-hosted · Coolify + Render']
         ],
-        overview: 'SynthralOS puts the fragmented agent-framework ecosystem behind a single multi-tenant platform, covering runtime, memory, retrieval and deployment.',
+        overview: 'SynthralOS puts the fragmented agent-framework ecosystem behind a single multi-tenant platform, covering runtime, memory, retrieval and deployment. As a forward-deployed AI engineer I co-architected the platform and owned it end-to-end, from schema to frontend.',
         sections: [
             {
                 h: 'Agent runtime',
@@ -97,15 +98,15 @@ window.PROJECTS = [
             }
         ],
         stack: ['Python', 'LangGraph', 'Postgres', 'Qdrant', 'pgvector', 'Mem0', 'Graphiti', 'Alembic', 'Coolify'],
-        links: [['Architecture on khyaaltech.com', 'https://khyaaltech.com/#work']]
+        links: [['Architecture write-up on khyaaltech.com', 'https://khyaaltech.com/#work']]
     },
     {
-        id: 'dobbli3d',
+        id: 'sparse360',
         wide: true,
-        title: 'Dobbli3D',
+        title: 'Sparse-View 360',
         sub: 'Sparse-view 360° panoramas & 3D tours',
         kind: 'VISION · 3D TOURS',
-        context: 'Client · Dobbli, Belgrade · 2024',
+        context: 'Client project · 2024',
         piece: 'I',
         color: 'cyan',
         tags: ['vision', '3d'],
@@ -117,7 +118,7 @@ window.PROJECTS = [
             ['Finish', 'Inpaint, sharpen']
         ],
         meta: [
-            ['Client', 'Dobbli · Belgrade, Serbia'],
+            ['Context', 'Client project'],
             ['Domain', 'Virtual tours, property capture'],
             ['Year', '2024']
         ],
@@ -142,21 +143,21 @@ window.PROJECTS = [
         links: [['Visuals on khyaaltech.com', 'https://khyaaltech.com/#portfolio']]
     },
     {
-        id: 'mockberg',
-        title: 'Mockberg Try-On',
+        id: 'jewellery-tryon',
+        title: 'Jewellery Try-On',
         sub: 'Generative product imagery & jewellery try-on',
         kind: 'GENERATIVE · RETAIL',
-        context: 'Client · Axel, Stockholm · 2024',
+        context: 'Client project · 2024',
         piece: 'Z',
         color: 'pink',
         tags: ['vision', 'gen'],
         summary: 'Studio-grade jewellery imagery without a studio: products placed on generated models with natural pose, styling and light.',
         meta: [
-            ['Client', 'Axel · Stockholm'],
-            ['Brands', 'Mockberg, Marshal & others'],
+            ['Context', 'Client project'],
+            ['Domain', 'E-commerce product imagery'],
             ['Year', '2024']
         ],
-        overview: 'Hyperrealistic, on-brand product photography and a virtual try-on flow for Scandinavian lifestyle brands. Generative workflows, tuned per brand identity and material language, replace physical shoots.',
+        overview: 'Hyperrealistic, on-brand product photography and a virtual try-on flow for lifestyle brands. Generative workflows, tuned per brand identity and material language, replace physical shoots.',
         sections: [
             {
                 h: 'Pipeline',
@@ -178,7 +179,7 @@ window.PROJECTS = [
         title: 'Floorplan-to-3D',
         sub: 'Generative architecture: plans, renders, facades',
         kind: 'GENERATIVE · ARCHITECTURE',
-        context: 'Imarat Group · 2024 – now',
+        context: 'Imarat Group · 2024 – 2026',
         piece: 'L',
         color: 'orange',
         tags: ['vision', 'gen', '3d'],
@@ -186,7 +187,7 @@ window.PROJECTS = [
         meta: [
             ['Context', 'Imarat Group, Islamabad'],
             ['Research', 'Paper in progress'],
-            ['Year', '2024 – now']
+            ['Year', '2024 – 2026']
         ],
         overview: 'Interior and exterior redesign end-to-end: floor plan alterations, house render generation and facade remodelling, with landscaping and urban modelling so the result fits its surroundings.',
         sections: [
@@ -212,13 +213,13 @@ window.PROJECTS = [
         title: 'Furniture LoRA Lab',
         sub: 'LoRA training platform for product redesign',
         kind: 'GENERATIVE · PRODUCT',
-        context: 'Client · confidential, Barcelona',
+        context: 'Client project · confidential',
         piece: 'J',
         color: 'blue',
         tags: ['gen'],
         summary: 'An extensible LoRA training platform for high-fidelity sofa and furniture redesign: new styles, materials and configurations without reshooting the product.',
         meta: [
-            ['Client', 'Confidential · Barcelona, Spain'],
+            ['Context', 'Client project · confidential'],
             ['Domain', 'Furniture e-commerce']
         ],
         overview: 'A platform for training and serving product-specific adapters, so a furniture catalogue can be restyled generatively instead of re-photographed.',

@@ -7,7 +7,7 @@
     <meta name="description" content="Syed Muhammad Asad — AI engineer building LLM agents, computer vision and 3D systems: Gaussian-splat avatars, sparse-view panoramas, diffusion pipelines and Urdu voice AI.">
     <meta name="theme-color" content="#0e0517">
     <meta property="og:title" content="Syed Muhammad Asad · AI Engineer">
-    <meta property="og:description" content="LLMs, computer vision & 3D. Case files for XISION, SynthralOS, Dobbli3D, KisaanDost and more.">
+    <meta property="og:description" content="LLMs, computer vision & 3D. Case files for XISION, SynthralOS, KisaanDost and more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://asadrizvi64.github.io/">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -139,16 +139,18 @@
                 <div class="about-grid">
                     <div class="bio reveal">
                         <p class="bio-lead">
-                            I'm an AI engineer from Islamabad working across three layers of the stack:
+                            I'm an AI engineer based in Dresden, Germany, working across three layers of the stack:
                             <mark class="hl-green">perception</mark> (segmentation, feature matching, reconstruction),
                             <mark class="hl-pink">generation</mark> (diffusion, GANs, LoRA fine-tuning) and
                             <mark class="hl-purple">language</mark> (LLM fine-tuning, RAG, agent runtimes).
                         </p>
                         <p>
-                            At <strong>Imarat Group</strong> I build generative tools for architecture: floorplan-to-render
-                            pipelines, Stable Diffusion + ControlNet fine-tunes and city-planning research. Along the way
-                            I cut load times on our AI systems by 97%. Through <a href="https://khyaaltech.com" target="_blank" rel="noopener">KhyaalTech</a>
-                            I ship vision, 3D and agent systems for teams in Belgrade, Barcelona and Stockholm.
+                            At <strong>Imarat Group</strong> (2024–2026) I built generative tools for architecture:
+                            floorplan-to-render pipelines, Stable Diffusion + ControlNet fine-tunes and city-planning research,
+                            and cut load times on our AI systems by 97%. As a forward-deployed AI engineer at
+                            <strong>SynthralOS</strong> I co-architected a multi-tenant operating system for AI agents.
+                            Through <a href="https://khyaaltech.com" target="_blank" rel="noopener">KhyaalTech</a> I ship
+                            vision, 3D and generative systems for client teams.
                         </p>
                         <p>
                             I studied AI at FAST-NUCES (BS, 2023). My final-year project, KisaanDost, put a fine-tuned Bloomz
@@ -162,8 +164,8 @@
                         <div class="sheet-top"><span>CHARACTER SHEET</span><span class="sheet-tag">P1</span></div>
                         <dl class="sheet-rows">
                             <div><dt>CLASS</dt><dd>AI Engineer</dd></div>
-                            <div><dt>BASE</dt><dd>Islamabad, PK · UTC+5</dd></div>
-                            <div><dt>GUILDS</dt><dd>KhyaalTech · Imarat Group</dd></div>
+                            <div><dt>BASE</dt><dd>Dresden, DE · CET</dd></div>
+                            <div><dt>GUILDS</dt><dd>KhyaalTech · ex-SynthralOS · ex-Imarat</dd></div>
                             <div><dt>MAIN STAT</dt><dd>Python / PyTorch</dd></div>
                             <div><dt>SPEAKS</dt><dd>English · Urdu</dd></div>
                             <div><dt>STATUS</dt><dd><span class="pulse" aria-hidden="true"></span>Shipping</dd></div>
@@ -330,24 +332,37 @@
                         <div class="log-when">NOW</div>
                         <div class="log-body">
                             <h3>KhyaalTech <span>· AI Vision Laboratory</span></h3>
-                            <p class="log-role">Vision, 3D &amp; agent systems for clients</p>
+                            <p class="log-role">Vision, 3D &amp; generative systems for clients</p>
                             <ul>
                                 <li>XISION: Gaussian-splat avatars bound to SMPL-X and rendered on iPhone via Metal.</li>
-                                <li>SynthralOS: multi-tenant agent OS with 14 framework adapters, durable workflows, three-tier memory and RAG.</li>
-                                <li>Dobbli (Belgrade): 3D virtual tours with sparse-view panoramas, 3DGS and COLMAP dense maps.</li>
-                                <li>Barcelona client: LoRA / DreamBooth training platform on a ComfyUI backend for furniture redesign.</li>
-                                <li>Axel (Stockholm): hyperrealistic generative product imagery for Mockberg, Marshal and others.</li>
+                                <li>3D virtual tours: sparse-view 360° panoramas, 3DGS and COLMAP dense maps.</li>
+                                <li>LoRA / DreamBooth training platform on a ComfyUI backend for furniture redesign.</li>
+                                <li>Hyperrealistic generative product imagery for lifestyle brands, replacing studio shoots.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="log-item reveal" style="--c: var(--blue)">
+                        <div class="log-when">NOV 2025<br>— MAY 2026</div>
+                        <div class="log-body">
+                            <h3>SynthralOS</h3>
+                            <p class="log-role">Forward Deployed AI Engineer</p>
+                            <ul>
+                                <li>Co-architected a multi-tenant agent OS and owned it end-to-end, from Postgres schema to API and frontend.</li>
+                                <li>Agent runtime: 14 framework adapters behind a unified dispatcher with spawn guards and bounded execution.</li>
+                                <li>Durable workflows (Temporal-style executor + LangGraph) with versioning, deterministic replay, rollback and approvals.</li>
+                                <li>Three-tier memory (Mem0, Graphiti, Context7) and Postgres-canonical RAG on Qdrant with pgvector fallback.</li>
+                                <li>~40 Alembic migrations; self-hosted production on Coolify + Render.</li>
                             </ul>
                         </div>
                     </li>
                     <li class="log-item reveal" style="--c: var(--purple)">
-                        <div class="log-when">MAR 2024<br>— NOW</div>
+                        <div class="log-when">MAR 2024<br>— MAR 2026</div>
                         <div class="log-body">
                             <h3>Imarat Group of Companies <span>· Islamabad</span></h3>
                             <p class="log-role">AI Engineer</p>
                             <ul>
                                 <li>Built architecture-planning tools for floorplan and 3D elevation design; fine-tuned SD + ControlNet (loss −82% over 400 epochs).</li>
-                                <li>Lead research on AI for city planning and customisable home design.</li>
+                                <li>Led research on AI for city planning and customisable home design.</li>
                                 <li>Generative models that turn raw data into architectural insight, improving precision by 30%.</li>
                                 <li>Cut load times by 97% on internal AI systems; built the AI lead-qualification workflow across six developments.</li>
                             </ul>
@@ -471,8 +486,8 @@
                 </div>
                 <ul class="contact-grid reveal">
                     <li><span>EMAIL</span><a href="mailto:asad.haider.rizvi64@gmail.com">asad.haider.rizvi64@gmail.com</a></li>
-                    <li><span>PHONE</span><a href="tel:+923365770127">+92 336 577 0127</a></li>
-                    <li><span>BASE</span>Islamabad, Pakistan</li>
+                    <li><span>PHONE</span><a href="tel:+4917665127468">+49 176 65127468</a></li>
+                    <li><span>BASE</span>Dresden, Germany</li>
                     <li><span>STUDIO</span><a href="https://khyaaltech.com" target="_blank" rel="noopener">khyaaltech.com</a></li>
                 </ul>
                 <div class="socials reveal">
