@@ -45,6 +45,31 @@
                 <div class="linestack">${rows.map(line).join('')}</div>
             </div>`;
         }
+        if (p.visual === 'video' && p.video) {
+            const v = p.video;
+            return `<div class="boss-visual boss-visual-media" aria-hidden="true">
+                <video class="boss-video" src="${esc(v.src)}" poster="${esc(v.poster)}" muted loop playsinline preload="metadata" data-autoplay></video>
+                <span class="vis-label">${esc(v.label)}</span>
+            </div>`;
+        }
+        if (p.visual === 'race' && p.race) {
+            // bar length = seconds relative to the slower run in each group
+            const groups = p.race.map((g) => {
+                const max = Math.max(...g.rows.map((r) => r[1]));
+                const saved = Math.round((1 - g.rows[1][1] / g.rows[0][1]) * 100);
+                const rows = g.rows.map(([name, s], i) =>
+                    `<div class="race-row${i ? ' is-new' : ''}">
+                        <span class="race-name">${esc(name)}</span>
+                        <span class="race-track"><span class="race-fill" style="--w:${((s / max) * 100).toFixed(1)}%"></span></span>
+                        <span class="race-val">${s} s</span>
+                    </div>`).join('');
+                return `<div class="race-group"><p class="race-label">${esc(g.label)} <b>\u2212${saved}%</b></p>${rows}</div>`;
+            }).join('');
+            return `<div class="boss-visual" aria-hidden="true">
+                <span class="vis-label">SINGLE-SEED EXAMPLES · H100 · LOWER IS BETTER</span>
+                <div class="race">${groups}</div>
+            </div>`;
+        }
         return '';
     }
 
@@ -95,6 +120,24 @@
         bossEl.innerHTML = boss.join('');
         levelsEl.innerHTML = levels.join('');
         if (window.mountSplats) document.querySelectorAll('[data-splat]').forEach((c) => window.mountSplats(c));
+
+        // card videos play only while on screen, and never for reduced-motion visitors
+        const vids = document.querySelectorAll('video[data-autoplay]');
+        if (vids.length && !reduceMotion && 'IntersectionObserver' in window) {
+            const vo = new IntersectionObserver((entries) => {
+                entries.forEach((en) => {
+                    const v = en.target;
+                    if (en.isIntersecting && !document.hidden) {
+                        v.muted = true;
+                        const pr = v.play();
+                        if (pr && pr.catch) pr.catch(() => {});
+                    } else {
+                        v.pause();
+                    }
+                });
+            }, { threshold: 0.25 });
+            vids.forEach((v) => vo.observe(v));
+        }
     }
 
     /* ---------------- filters ---------------- */
@@ -132,6 +175,11 @@
             ? `<dl class="cf-meta">${p.meta.map(([k, val]) => `<div><dt>${esc(k)}</dt><dd>${esc(val)}</dd></div>`).join('')}</dl>`
             : '';
         const steps = p.steps ? `<div class="cf-sec"><h4>PIPELINE</h4>${stepsHTML(p.steps)}</div>` : '';
+        const size = (f) => (f.w && f.h ? ` width="${f.w}" height="${f.h}"` : '');
+        const cap = (f) => (f.caption ? `<figcaption>${esc(f.caption)}</figcaption>` : '');
+        const figs = (p.figures || []).map((f) => (f.type === 'video'
+            ? `<figure class="cf-fig"><video src="${esc(f.src)}"${f.poster ? ` poster="${esc(f.poster)}"` : ''}${size(f)} controls muted loop playsinline preload="none" aria-label="${esc(f.alt || '')}"></video>${cap(f)}</figure>`
+            : `<figure class="cf-fig"><img src="${esc(f.src)}" alt="${esc(f.alt || '')}"${size(f)} loading="lazy" decoding="async">${cap(f)}</figure>`)).join('');
         const secs = (p.sections || []).map((s) => `<div class="cf-sec"><h4>${esc(s.h.toUpperCase())}</h4>${
             s.list ? `<ul class="cf-list">${s.list.map((li) => `<li>${esc(li)}</li>`).join('')}</ul>` : `<p>${esc(s.text)}</p>`
         }</div>`).join('');
@@ -144,6 +192,7 @@
             <p class="cf-sub">${esc(p.sub)}</p>
             ${meta}
             <p class="cf-overview">${esc(p.overview || p.summary)}</p>
+            ${figs}
             ${steps}
             ${secs}
             <div class="cf-sec"><h4>STACK</h4>${chipsHTML(p.stack)}</div>
@@ -167,7 +216,10 @@
         if (typeof dlg.close === 'function') dlg.close();
         else { dlg.removeAttribute('open'); onClosed(); }
     }
-    function onClosed() { if (opener) opener.focus(); }
+    function onClosed() {
+        body.querySelectorAll('video').forEach((v) => v.pause());
+        if (opener) opener.focus();
+    }
 
     if (dlg) {
         document.addEventListener('click', (e) => {
