@@ -7,7 +7,7 @@
     <meta name="description" content="Syed Muhammad Asad — AI engineer building LLM agents, computer vision and 3D systems: Gaussian-splat avatars, sparse-view panoramas, diffusion pipelines and Urdu voice AI.">
     <meta name="theme-color" content="#0e0517">
     <meta property="og:title" content="Syed Muhammad Asad · AI Engineer">
-    <meta property="og:description" content="LLMs, computer vision & 3D. Case files for XISION, SynthralOS, KisaanDost and more.">
+    <meta property="og:description" content="LLMs, computer vision & 3D Gaussian splatting. Case files for XISION, Gaussian Blobs, Faster 3DGS, SynthralOS and more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://asadrizvi64.github.io/">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -63,8 +63,8 @@
                     <p class="role">AI ENGINEER <span class="slash">//</span> LLMs · COMPUTER VISION · 3D</p>
                     <p class="lede">
                         I build AI that sees, reads and renders: photorealistic Gaussian-splat avatars on iPhone,
-                        360° panoramas from sparse photos, diffusion pipelines for architecture, Urdu voice assistants,
-                        and the Python infrastructure that keeps LLM agents running in production.
+                        faster 3DGS training, Gaussian fits of light-sheet microscopy, diffusion pipelines for architecture,
+                        Urdu voice assistants, and the Python infrastructure that keeps LLM agents running in production.
                     </p>
                     <div class="cta">
                         <a class="btn btn-green" href="#work">▶ SELECT LEVEL</a>
@@ -72,7 +72,7 @@
                     </div>
                     <dl class="stats">
                         <div><dt>YEARS SHIPPING</dt><dd>03+</dd></div>
-                        <div><dt>BUILDS LOGGED</dt><dd>16</dd></div>
+                        <div><dt>BUILDS LOGGED</dt><dd>18</dd></div>
                         <div><dt>PAPER</dt><dd>01<small> WIP</small></dd></div>
                     </dl>
                 </div>
@@ -122,8 +122,8 @@
         <div class="tape-wrap" aria-hidden="true">
             <div class="tape">
                 <div class="tape-track">
-                    <span>3D GAUSSIAN SPLATTING ✦ SMPL-X ✦ METAL ✦ LANGGRAPH ✦ RAG ✦ QDRANT ✦ LORA ✦ DREAMBOOTH ✦ CONTROLNET ✦ SUPERPOINT ✦ COLMAP ✦ DEEPLABV3+ ✦ BLOOMZ ✦ RASA ✦ PYTORCH ✦&nbsp;</span>
-                    <span>3D GAUSSIAN SPLATTING ✦ SMPL-X ✦ METAL ✦ LANGGRAPH ✦ RAG ✦ QDRANT ✦ LORA ✦ DREAMBOOTH ✦ CONTROLNET ✦ SUPERPOINT ✦ COLMAP ✦ DEEPLABV3+ ✦ BLOOMZ ✦ RASA ✦ PYTORCH ✦&nbsp;</span>
+                    <span>3D GAUSSIAN SPLATTING ✦ LIGHT-SHEET MICROSCOPY ✦ CUDA ✦ 3DGS-MCMC ✦ SMPL-X ✦ METAL ✦ LANGGRAPH ✦ RAG ✦ QDRANT ✦ LORA ✦ DREAMBOOTH ✦ CONTROLNET ✦ SUPERPOINT ✦ COLMAP ✦ DEEPLABV3+ ✦ BLOOMZ ✦ RASA ✦ PYTORCH ✦&nbsp;</span>
+                    <span>3D GAUSSIAN SPLATTING ✦ LIGHT-SHEET MICROSCOPY ✦ CUDA ✦ 3DGS-MCMC ✦ SMPL-X ✦ METAL ✦ LANGGRAPH ✦ RAG ✦ QDRANT ✦ LORA ✦ DREAMBOOTH ✦ CONTROLNET ✦ SUPERPOINT ✦ COLMAP ✦ DEEPLABV3+ ✦ BLOOMZ ✦ RASA ✦ PYTORCH ✦&nbsp;</span>
                 </div>
             </div>
         </div>
@@ -153,6 +153,12 @@
                             an AI vision lab where we ship vision, 3D and generative systems for client teams.
                         </p>
                         <p>
+                            Lately my research is about Gaussian splatting itself. At <strong>TU Dresden</strong> I fit
+                            light-sheet microscopy volumes with 3D Gaussians and test whether the cell nuclei survive
+                            compression, and I have been making 3DGS train faster on the Capella H100 cluster, with Claude
+                            in Claude Code writing the CUDA while I set the questions and the experiments.
+                        </p>
+                        <p>
                             I studied AI at FAST-NUCES (BS, 2023). My final-year project, KisaanDost, put a fine-tuned Bloomz
                             model behind an Urdu voice interface for farmers. Most of my day is Python: training loops,
                             data pipelines, and the infrastructure that gets models into production.
@@ -177,6 +183,7 @@
                                 <li><i class="tet tet-S" aria-hidden="true"></i>LoRA / DreamBooth fine-tuning</li>
                                 <li><i class="tet tet-I" aria-hidden="true"></i>RAG &amp; agent infrastructure</li>
                                 <li><i class="tet tet-Z" aria-hidden="true"></i>Sparse-view stitching &amp; reconstruction</li>
+                                <li><i class="tet tet-O" aria-hidden="true"></i>3DGS training speed (CUDA, MCMC)</li>
                                 <li><i class="tet tet-L" aria-hidden="true"></i>Urdu speech &amp; NLP</li>
                             </ul>
                         </div>
@@ -206,6 +213,7 @@
                     <button class="filter" data-filter="3d" aria-pressed="false">3D</button>
                     <button class="filter" data-filter="gen" aria-pressed="false">GENERATIVE</button>
                     <button class="filter" data-filter="llm" aria-pressed="false">LLM &amp; AGENTS</button>
+                    <button class="filter" data-filter="research" aria-pressed="false">RESEARCH</button>
                     <span class="filter-count" id="filterCount" aria-live="polite"></span>
                 </div>
 
@@ -283,6 +291,7 @@
                         <ul class="slots">
                             <li>OpenCV</li><li>SuperPoint</li><li>SIFT</li><li>Homography</li><li>DeepLabV3+</li><li>U²-Net</li>
                             <li>Pose estimation</li><li>Segmentation</li><li>Alpha matting</li><li>Inpainting</li>
+                            <li>Cellpose</li><li>LoG blob detection</li><li>Light-sheet microscopy</li>
                         </ul>
                     </section>
                     <section class="inv reveal" style="--c: var(--purple)">
@@ -290,6 +299,7 @@
                         <ul class="slots">
                             <li>3D Gaussian Splatting</li><li>SMPL-X</li><li>COLMAP</li><li>Geometry processing</li>
                             <li>Metal</li><li>iOS</li><li>Panda3D</li><li>Meshes</li>
+                            <li>CUDA kernels</li><li>3DGS-MCMC</li><li>Faster-GS</li><li>three.js</li>
                         </ul>
                     </section>
                     <section class="inv reveal" style="--c: var(--pink)">
@@ -304,6 +314,7 @@
                         <ul class="slots">
                             <li>Python</li><li>PyTorch</li><li>TensorFlow / Keras</li><li>Postgres</li><li>Alembic</li><li>Docker</li>
                             <li>Kubernetes</li><li>Coolify</li><li>Render</li><li>GitHub Actions</li><li>WebSockets</li><li>Zapier</li>
+                            <li>HPC (H100 / A100)</li>
                         </ul>
                     </section>
                     <section class="inv reveal" style="--c: var(--yellow)">
@@ -439,6 +450,23 @@
                         <h3>From Interactive Floorplan Generation to Style Rendering Using Diffusion Models and ControlNet</h3>
                         <p>A framework for real-time, interactive floor plan creation and style-based rendering, so architects can work with diffusion models in the earliest stage of design instead of after it.</p>
                         <div class="loadbar" aria-hidden="true"><span></span></div>
+                    </article>
+
+                    <article class="panel reveal" style="--c: var(--cyan)">
+                        <p class="panel-kicker">TEAM PROJECT · TU DRESDEN · NOV 2026</p>
+                        <h3>Gaussian Blobs for 3D Fluorescence Microscopy</h3>
+                        <p class="panel-sub">Chair of Machine Learning for Spatial Understanding</p>
+                        <p>With Akim Al-Makhdar, supervised by Prof. Dr. Martin Weigert. Fitting light-sheet volumes with 3D Gaussians, and testing whether the nuclei survive.</p>
+                        <p><a href="https://github.com/asadrizvi64/DeepLearning-Seminar-TeamProject" target="_blank" rel="noopener">Code &amp; results ▸</a></p>
+                    </article>
+
+                    <article class="panel reveal" style="--c: var(--green)">
+                        <p class="panel-kicker">WRITING · MEDIUM · NOV 2026</p>
+                        <h3>Making 3D scenes train faster</h3>
+                        <ul class="writing">
+                            <li><a href="https://medium.com/@asadrizvi64/i-asked-an-ai-to-make-3d-scenes-train-faster-heres-what-happened-7201f5ce8bae" target="_blank" rel="noopener">Part 1 · I Asked an AI to Make 3D Scenes Train Faster. Here’s What Happened.</a></li>
+                            <li><a href="https://asadrizvi64.medium.com/same-quality-in-fewer-steps-part-2-of-making-3d-scenes-train-faster-970ce25b3aa9" target="_blank" rel="noopener">Part 2 · Same Quality in Fewer Steps</a></li>
+                        </ul>
                     </article>
 
                     <article class="panel panel-wide reveal" style="--c: var(--yellow)">
